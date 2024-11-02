@@ -1,0 +1,146 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s, color 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s;
+}
+
+/* Mode Rapih */
+body.rapih {
+    background-color: #333333;
+    color: #333;
+}
+
+body.rapih .container {
+    background: #b6b6b6;
+    border: 1px solid #a1a1a1;
+}
+
+/* Mode Berantakan */
+body.berantakan {
+    background-color: #333333;
+    color: #fff;
+}
+
+body.berantakan .container {
+    background: #109610;
+    color: #2809d6;
+    border: 1px solid #d607ff;
+    transform: rotate(185deg) skew(-1deg);
+}
+
+/* Header */
+h1, h2 {
+    text-align: center;
+    color: inherit;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: inherit;
+    margin-bottom: 40px;
+}
+
+
+h3 {
+    font-size: 1.1em;
+    margin-top: 20px;
+    color: #444;
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+body.berantakan h3 {
+    color: #ddd;
+}
+
+h3:hover {
+    background-color: #eee;
+}
+
+h3.active {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+
+.content {
+    padding: 10px;
+    line-height: 1.6;
+    color: inherit;
+    transition: max-height 0.5s, opacity 0.5s;
+}
+
+.hidden {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, opacity 0.5s;
+}
+
+.mode-toggle {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;          
+    bottom: 20px;             
+    right: 20px;             
+    transition: background 0.3s;
+    z-index: 1000;            
+}
+
+.mode-toggle:hover {
+    background-color: #0056b3;
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .mode-toggle {
+        padding: 8px 16px;
+        bottom: 15px;
+        right: 15px;
+    }
+}

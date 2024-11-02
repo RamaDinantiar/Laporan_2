@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Laporan</title>
+</head>
+<body class="rapih">
+    <div class="container">
+        <h1>LAPORAN 02</h1>
+        <h2>Rama Dinantiar | 202331044</h2>
+
+        <h3 onclick="toggleContent(this)">1. Mengapa Menggunakan HTML, CSS, dan JavaScript dalam Pemrograman Web?</h3>
+        <ul class="content">
+            <li>HTML (HyperText Markup Language) adalah bahasa dasar yang digunakan untuk membuat struktur dan konten
+                dari sebuah halaman web. HTML memungkinkan kita untuk menampilkan teks, gambar, video, dan elemen lainnya
+                pada halaman web.</li>
+            <li>CSS (Cascading Style Sheets) digunakan untuk menata tampilan atau gaya dari elemen-elemen HTML. 
+                Dengan CSS, kita dapat mengatur warna, font, layout, dan tampilan visual lainnya, sehingga halaman web 
+                terlihat lebih menarik dan terstruktur.</li>
+            <li>JavaScript adalah bahasa pemrograman yang digunakan untuk menambahkan interaktivitas pada halaman web.
+                Dengan JavaScript, kita dapat membuat animasi, validasi formulir, dan berbagai fungsi dinamis yang 
+                meningkatkan pengalaman pengguna.</li>
+        </ul>
+
+        <h3 onclick="toggleContent(this)">2. Bagaimana HTML, CSS, dan JavaScript Dapat Diintegrasikan dalam Pemrograman Web?</h3>
+        <ul class="content">
+            <li>HTML, CSS, dan JavaScript dapat diintegrasikan dengan mudah dalam sebuah dokumen web. HTML berfungsi
+                sebagai fondasi dasar, kemudian CSS ditambahkan untuk memperindah tampilan, dan JavaScript ditambahkan 
+                untuk membuat elemen-elemen web yang interaktif.</li>
+            <li>Cara Mengintegrasikan :
+                <ul>
+                    <li>HTML dan CSS: CSS dapat ditambahkan ke HTML dengan menggunakan inline style, internal style sheet
+                        di dalam tag style, atau external style sheet dengan file terpisah yang dihubungkan menggunakan 
+                        tag link.</li>
+                    <li>HTML dan JavaScript: JavaScript dapat diintegrasikan dalam HTML menggunakan inline script,
+                        internal script di dalam tag script, atau external script dengan file terpisah yang dihubungkan
+                        menggunakan tag script src="...".</li>
+                </ul>
+            </li>
+            <li>Manfaat Integrasi : Dengan mengintegrasikan HTML, CSS, dan JavaScript, kita dapat menciptakan halaman web 
+                yang tidak hanya memiliki konten yang terstruktur tetapi juga tampilan yang menarik dan fitur interaktif, 
+                memberikan pengalaman pengguna yang lebih baik.</li>
+        </ul>
+
+        <button class="mode-toggle" onclick="toggleMode()">Ubah Mode Tampilan</button>
+    </div>
+
+    <script>
+        function toggleContent(element) {
+            let content = element.nextElementSibling;
+
+            while (content && !content.classList.contains("content")) {
+                content = content.nextElementSibling;
+            }
+
+            if (content) {
+                const isHidden = content.classList.contains("hidden");
+
+                const confirmMessage = isHidden
+                    ? "Apakah ingin menampilkan konten ini kembali?"
+                    : "Ingin menyembunyikan konten ini?";
+                const confirmAction = confirm(confirmMessage);
+
+                if (confirmAction) {
+                    content.classList.toggle("hidden");
+                    element.classList.toggle("active");
+                }
+            }
+        }
+
+        function toggleMode() {
+            document.body.classList.toggle("berantakan");
+            document.body.classList.toggle("rapih");
+        }
+    </script>
+</body>
+</html>
